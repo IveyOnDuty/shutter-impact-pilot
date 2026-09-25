@@ -1,44 +1,58 @@
 import type { ReactNode } from 'react'
 
-const OBJECTIVES: { title: string; points: string[]; links?: string[]; dont?: string }[] = [
+const OBJECTIVES: { title: string; points: string[]; dos?: string[]; links?: { label: string; href: string }[]; dont?: string; note?: string }[] = [
   {
     title: 'Objective 1: Qualify an Encrypted-Transaction Deployment Opportunity',
     points: [
       'The encrypted mempool encrypts transactions until they are included in a block, so nobody can read or exploit them while they wait in a public mempool.',
+    ],
+    dos: [
       'Identify and qualify a concrete opportunity to integrate Shutter’s encrypted mempool with a wallet, dApp, RPC provider, routing service, chain, validator ecosystem, or other transaction-flow operator.',
       'Deliver a scoped assessment, pilot proposal, or feasibility test tied to a named operator (or a substantiated route to one), a defined transaction flow, and a stated next decision.',
     ],
     dont: 'Generic outreach, contact lists, and generic explainers do not qualify.',
-    links: ['Shutter Encrypted mempools', 'Github'],
+    links: [
+      { label: 'Shutter Encrypted mempools', href: 'https://shutter.network/shielded-trading/' },
+      { label: 'Github', href: 'https://github.com/shutter-network/rolling-shutter' },
+    ],
   },
   {
     title: 'Objective 2: Qualify a Private Voting Deployment',
     points: [
       'For DAOs, ballots stay encrypted while the vote runs, so voters cannot be pressured, bought, or bandwagoned. Results are revealed when the vote closes, or ballots stay secret with only the result published.',
       'For real-world voting, associations, municipalities, and other organizations use Shutter Governance to run private and verifiable elections.',
+    ],
+    dos: [
       'Identify and qualify a concrete opportunity for an existing voting platform to integrate Shutter’s private voting solution.',
       'Deliver a pilot proposal tied to a named platform or body, what they would pay (an integration fee or transaction revenue), and a stated next decision.',
     ],
     dont: 'Generic advocacy or unsupported interest does not qualify.',
     links: [
-      'Coming Soon to DAOs: Permanent Shielded Voting via Homomorphic Encryption',
-      'Introducing Shutter Governance',
+      { label: 'Coming Soon to DAOs: Permanent Shielded Voting via Homomorphic Encryption', href: 'https://blog.shutter.network/coming-soon-to-daos-permanent-shielded-voting-via-homomorphic-encryption/' },
+      { label: 'Introducing Shutter Governance', href: 'https://shuttergovernance.com/blog/introducing-shutter-governance' },
     ],
   },
   {
     title: 'Objective 3: Identify and Validate a Concorde Use Case',
     points: [
       'Concorde lets a group operate with a shared AI agent that works for the whole group: collecting input, keeping shared history, coordinating recurring work, and tracking decisions.',
+    ],
+    dos: [
       'Identify and validate a high-value, repeatable use case and customer segment where a Concorde shared agent could provide meaningful value and generate revenue.',
       'Deliver a decision-ready assessment based on real user or customer evidence: the problem, current workflow, required Concorde capabilities, commercial or adoption path, and a route to a first pilot.',
     ],
     dont: 'Generic market research, lists of possible industries, unsupported use-case ideas, and generic outreach do not qualify.',
-    links: ['Concorde Shared Agent Launcher', 'Concorde: A Framework for Shared Agents'],
+    links: [
+      { label: 'Concorde Shared Agent Launcher', href: 'https://blog.shutter.network/introducing-the-concorde-shared-agent-launcher/' },
+      { label: 'Concorde: A Framework for Shared Agents', href: 'https://blog.shutter.network/concorde-a-framework-for-shared-agents/' },
+    ],
   },
   {
     title: 'Objective 4: Validate a Shutter Use Case in Tokenized Markets',
     points: [
       'Tokenized markets bring stocks, funds, credit, and other assets on chain. Shutter may help where revealing orders, allocations, or terms too early creates avoidable execution or coordination risk.',
+    ],
+    dos: [
       'Test a defined use case in tokenized equities, funds, credit, or other real-world-asset workflows: information leakage, allocation fairness, confidential coordination, sealed bidding, or timed disclosure.',
       'Identify the operator, workflow, constraints, and next decision.',
     ],
@@ -48,6 +62,8 @@ const OBJECTIVES: { title: string; points: string[]; links?: string[]; dont?: st
     title: 'Objective 5: Package a Repeatable Shutter Workflow',
     points: [
       'Turn an existing Shutter capability into a reusable workflow for a defined user, operator, or customer segment — for example sealed RFPs, selection processes, procurement, auctions, bug bounties, confidential coordination, or timed disclosure.',
+    ],
+    dos: [
       'Deliver a productized design, a customer- or partner-informed pilot package, or a reusable implementation guide.',
     ],
     dont: 'Generic demos and unmaintained tooling do not qualify.',
@@ -56,15 +72,24 @@ const OBJECTIVES: { title: string; points: string[]; links?: string[]; dont?: st
     title: 'Objective 6: Advance Shutter PEN Adoption, Operations, and Funding Readiness',
     points: [
       'Strengthen Shutter PEN as a long-term, mission-aligned funding institution for Ethereum Cypherpunk Manifesto projects.',
+    ],
+    dos: [
       'Eligible work includes a reviewable PEN interface, governance, security, operational, or funding-round capability; a measured SEAT-holder onboarding or participation initiative; or an artifact that resolves a defined PEN design, legal, capital-stewardship, or coordination blocker.',
-      'This objective does not require a commercial-revenue pathway.',
     ],
     dont: 'Generic advocacy, broad explainers, and unscoped campaigns do not qualify.',
+    links: [
+      { label: 'Introducing the Perpetual Endowment Network', href: 'https://blog.shutter.network/introducing-the-perpetual-endowment-network-pen/' },
+      { label: 'PEN Site', href: 'https://shutterpen.eth.limo/#/seats' },
+      { label: 'Github', href: 'https://github.com/shutter-network/shutter-pen-deployment-artifacts?ref=blog.shutter.network' },
+    ],
+    note: 'This objective does not require a commercial-revenue pathway.',
   },
   {
     title: 'Objective 7: Advance a High-Conviction Shutter Opportunity Outside the Defined Tracks',
     points: [
       'Use this exception track only for a concrete Shutter-related opportunity that does not fit Objectives 1–6.',
+    ],
+    dos: [
       'Explain why it does not fit, identify who needs to be involved, define the deliverable, and show the resulting decision, implementation step, or durable capability.',
       'The same evidence, milestone, disclosure, and demonstrated-value standards apply.',
       'Awards require specific DAO approval and may not use funds reserved for Objectives 1–6 unless the DAO separately approves it.',
@@ -99,34 +124,66 @@ export function Program() {
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-bone-700">
           The pilot tests whether a transparent, evidence-based process can identify, support, and retain contributors whose work creates verifiable value for Shutter. It is not compensation for a role, an idea, or activity alone.
         </p>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-bone-700">
+          Carefully read the 7 objectives set for the pilot program and pick one.
+        </p>
       </div>
 
-      <section className="space-y-3">
-        <h2 className="text-xs font-semibold text-bone-500 uppercase tracking-wider">Round 1 objectives</h2>
+      <section>
         <ol className="space-y-3">
           {OBJECTIVES.map((objective) => (
             <li key={objective.title} className="rounded-2xl border border-bone-200 bg-white px-5 py-4">
               <h3 className="text-sm font-semibold text-bone-950">{objective.title}</h3>
-              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-bone-700">
-                {objective.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-                {objective.links && (
-                  <li>
-                    Relevant links:
-                    <ul className="mt-1 list-disc pl-5">
-                      {objective.links.map((link) => (
-                        <li key={link}>{link}</li>
+              {objective.dos ? (
+                objective.points.map((point) => (
+                  <p key={point} className="mt-2 text-sm leading-relaxed text-bone-700">{point}</p>
+                ))
+              ) : (
+                <>
+                  {objective.points[0] && (
+                    <p className="mt-2 text-sm leading-relaxed text-bone-700">{objective.points[0]}</p>
+                  )}
+                  {objective.points.length > 1 && (
+                    <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-bone-700">
+                      {objective.points.slice(1).map((point) => (
+                        <li key={point}>{point}</li>
                       ))}
                     </ul>
-                  </li>
-                )}
-              </ul>
+                  )}
+                </>
+              )}
+              {objective.dos && (
+                <div className="mt-3">
+                  <span className="inline-block rounded bg-moss-500 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-bone-950">Do</span>
+                  <ul className="mt-1 list-disc space-y-1 pl-5 text-sm leading-relaxed text-bone-700">
+                    {objective.dos.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               {objective.dont && (
-                <p className="mt-3 flex items-start gap-2 text-sm leading-relaxed text-bone-700">
-                  <span className="mt-0.5 shrink-0 rounded bg-bone-950 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">Don't</span>
-                  <span>{objective.dont}</span>
-                </p>
+                <div className="mt-3">
+                  <span className="inline-block rounded bg-bone-950 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">Don't</span>
+                  <ul className="mt-1 list-disc pl-5 text-sm leading-relaxed text-bone-700">
+                    <li>{objective.dont}</li>
+                  </ul>
+                </div>
+              )}
+              {objective.links && (
+                <div className="mt-3 text-sm leading-relaxed text-bone-700">
+                  <p>Relevant links:</p>
+                  <ul className="mt-1 list-disc pl-5">
+                    {objective.links.map((link) => (
+                      <li key={link.href}>
+                        <a href={link.href} className="text-brand-700 hover:underline" target="_blank" rel="noreferrer">{link.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {objective.note && (
+                <p className="mt-3 text-sm italic leading-relaxed text-bone-600">{objective.note}</p>
               )}
             </li>
           ))}

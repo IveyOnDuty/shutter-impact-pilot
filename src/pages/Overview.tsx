@@ -15,13 +15,15 @@ function parseAmount(amount: string) {
   return Number.isFinite(value) ? value : 0
 }
 
-const earmarked = tracker.reduce((sum, row) => sum + parseAmount(row.amount), 0)
+const earmarked = tracker.reduce((sum, row) => (
+  row.submissionCheck ? sum + parseAmount(row.amount) : sum
+), 0)
 
-const MONEY = [
+const MONEY: { label: string; value: number; note?: string }[] = [
   { label: 'Total pool', value: financials.totalPool },
   { label: 'Round 1 pool', value: financials.round1Pool },
   { label: 'Round 2 pool', value: financials.round2Pool },
-  { label: 'Earmarked', value: earmarked },
+  { label: 'Earmarked', value: earmarked, note: 'Passed submission check' },
   { label: 'Remainder', value: financials.totalPool - earmarked },
 ]
 
@@ -38,10 +40,10 @@ export function Overview() {
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-semibold tracking-tight text-bone-950">{overview.title}</h1>
-      <p className="max-w-2xl text-base text-bone-600">{overview.subtitle}</p>
-      <p className="max-w-2xl text-sm leading-relaxed text-bone-500">
-        Between two rounds: Proactive and Retroactive, applicants will be able to receive funding for evidence-driven, high impact{' '}
-        <a href={APPLICATION} className="font-medium text-brand-700 hover:underline" target="_blank" rel="noreferrer">applications</a>.
+      <p className="max-w-2xl text-base text-bone-600">{overview.subtitle} 🚀</p>
+      <p className="max-w-2xl rounded-lg border-2 border-moss-800 bg-moss-100 px-3 py-1.5 text-sm leading-relaxed text-moss-900">
+        Between two rounds: Proactive and Retroactive, applicants will be able to receive funding for evidence-driven, high impact initiatives among 7 objectives. Apply{' '}
+        <a href={APPLICATION} className="font-medium text-brand-700 hover:underline" target="_blank" rel="noreferrer">here</a>!
       </p>
 
       <section className="overflow-hidden rounded-2xl border border-bone-200 bg-white">
@@ -60,7 +62,10 @@ export function Overview() {
         <dl>
           {MONEY.map((row) => (
             <div key={row.label} className="flex items-baseline justify-between gap-4 border-b border-bone-100 px-5 py-3.5 last:border-b-0">
-              <dt className="text-sm text-bone-600">{row.label}</dt>
+              <dt className="text-sm text-bone-600">
+                {row.label}
+                {row.note && <span className="ml-2 text-xs italic text-bone-400">({row.note})</span>}
+              </dt>
               <dd className={`text-sm font-medium tabular-nums ${row.value === null ? 'text-bone-400' : 'text-bone-950'}`}>
                 {usd(row.value)}
               </dd>
@@ -104,7 +109,7 @@ export function Overview() {
               <thead>
                 <tr className="border-b border-bone-100 text-[11px] font-semibold uppercase tracking-wider text-bone-400">
                   {['Applicant', 'Round', 'Objective', 'Amount', 'Submission check', 'Next step'].map((col) => (
-                    <th key={col} className="whitespace-nowrap px-5 py-3 font-semibold">{col}</th>
+                    <th key={col} className={`whitespace-nowrap px-5 py-3 font-semibold ${col === 'Round' || col === 'Objective' || col === 'Submission check' ? 'text-center' : ''}`}>{col}</th>
                   ))}
                 </tr>
               </thead>
@@ -116,10 +121,10 @@ export function Overview() {
                         <a href={row.link} className="text-brand-700 hover:underline" target="_blank" rel="noreferrer">{row.applicant}</a>
                       ) : <span className="text-bone-950">{row.applicant}</span>}
                     </td>
-                    <td className="px-5 py-3.5 text-bone-600">{row.round}</td>
-                    <td className="px-5 py-3.5 text-bone-600">{row.objective}</td>
+                    <td className="px-5 py-3.5 text-center text-bone-600">{row.round}</td>
+                    <td className="px-5 py-3.5 text-center text-bone-600">{row.objective}</td>
                     <td className="px-5 py-3.5 tabular-nums text-bone-950">{row.amount}</td>
-                    <td className="px-5 py-3.5">{row.submissionCheck ? '✅' : '—'}</td>
+                    <td className="px-5 py-3.5 text-center">{row.submissionCheck ? '✅' : '—'}</td>
                     <td className="px-5 py-3.5 text-bone-600">{row.nextStep}</td>
                   </tr>
                 ))}
