@@ -15,7 +15,7 @@ const MONEY = [
   { label: 'Round 1 pool', value: financials.round1Pool },
   { label: 'Round 2 pool', value: financials.round2Pool },
   { label: 'Earmarked', value: financials.earmarked },
-  { label: 'Reminder', value: financials.reminder },
+  { label: 'Remainder', value: financials.totalPool - (financials.earmarked ?? 0) },
 ]
 
 const META = [
