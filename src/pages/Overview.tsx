@@ -10,12 +10,19 @@ function usd(value: number | null) {
   return `$${value.toLocaleString('en-US')}`
 }
 
+function parseAmount(amount: string) {
+  const value = Number(amount.replace(/[^0-9.]/g, ''))
+  return Number.isFinite(value) ? value : 0
+}
+
+const earmarked = tracker.reduce((sum, row) => sum + parseAmount(row.amount), 0)
+
 const MONEY = [
   { label: 'Total pool', value: financials.totalPool },
   { label: 'Round 1 pool', value: financials.round1Pool },
   { label: 'Round 2 pool', value: financials.round2Pool },
-  { label: 'Earmarked', value: financials.earmarked },
-  { label: 'Remainder', value: financials.totalPool - (financials.earmarked ?? 0) },
+  { label: 'Earmarked', value: earmarked },
+  { label: 'Remainder', value: financials.totalPool - earmarked },
 ]
 
 const META = [

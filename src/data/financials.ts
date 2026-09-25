@@ -1,11 +1,9 @@
 /**
  * Financials from the public tracker sheet.
- * `null` on earmarked is the sheet's X$ placeholder: the page shows "Not set".
- * Remainder is total pool minus earmarked (an unset earmarked counts as 0).
+ * Earmarked is the sum of tracker amounts. Remainder is total pool minus that sum.
  */
 export const financials = {
   totalPool: 14000,
   round1Pool: 7000,
   round2Pool: 7000,
-  earmarked: null as number | null,
 }
