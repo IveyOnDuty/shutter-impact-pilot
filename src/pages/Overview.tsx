@@ -16,7 +16,7 @@ function parseAmount(amount: string) {
 }
 
 const earmarked = tracker.reduce((sum, row) => (
-  row.submissionCheck ? sum + parseAmount(row.amount) : sum
+  row.submissionCheck === true ? sum + parseAmount(row.amount) : sum
 ), 0)
 
 const MONEY: { label: string; value: number; note?: string }[] = [
@@ -124,7 +124,7 @@ export function Overview() {
                     <td className="px-5 py-3.5 text-center text-bone-600">{row.round}</td>
                     <td className="px-5 py-3.5 text-center text-bone-600">{row.objective}</td>
                     <td className="px-5 py-3.5 tabular-nums text-bone-950">{row.amount}</td>
-                    <td className="px-5 py-3.5 text-center">{row.submissionCheck ? '✅' : '—'}</td>
+                    <td className="px-5 py-3.5 text-center">{row.submissionCheck === true ? '✅' : row.submissionCheck === 'tbd' ? '🕐' : '—'}</td>
                     <td className="px-5 py-3.5 text-bone-600">{row.nextStep}</td>
                   </tr>
                 ))}
