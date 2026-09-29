@@ -34,9 +34,9 @@ export const tracker: TrackerEntry[] = [
     applicant: 'Crezno',
     round: '1',
     objective: '6',
-    link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-pen-ownership-chain-verification-and-deployment-runbook/964?u=seedgov',
-    amount: '$2,000',
-    submissionCheck: 'tbd',
-    nextStep: 'Submission Check',
+    link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-pen-ownership-chain-verification-and-deployment-runbook/964/3?u=seedgov',
+    amount: '$1,200',
+    submissionCheck: true,
+    nextStep: 'DAO Vote',
   },
 ]
