@@ -39,4 +39,13 @@ export const tracker: TrackerEntry[] = [
     submissionCheck: true,
     nextStep: 'DAO Vote',
   },
+  {
+    applicant: 'Ashg',
+    round: '1',
+    objective: '2',
+    link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-shielded-voting-evidence-pack-ens-scope-proposal-arbitrum-brief-and-fee-structure-inputs/968?u=seedgov',
+    amount: '$2,000',
+    submissionCheck: 'tbd',
+    nextStep: 'Submission Check',
+  },
 ]
