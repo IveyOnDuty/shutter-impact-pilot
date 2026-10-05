@@ -48,4 +48,14 @@ export const tracker: TrackerEntry[] = [
     submissionCheck: 'tbd',
     nextStep: 'Submission Check',
   },
+
+  {
+    applicant: 'Theo / 33HOXO',
+    round: '1',
+    objective: '5',
+    link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-33hoxo-reusable-confidential-market-infrastructure/975?u=seedgov',
+    amount: '$3,000',
+    submissionCheck: 'tbd',
+    nextStep: 'Submission Check',
+  },
 ]
