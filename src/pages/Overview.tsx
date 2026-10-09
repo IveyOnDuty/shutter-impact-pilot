@@ -3,8 +3,6 @@ import { overview } from '../data/overview'
 import { timeline } from '../data/timeline'
 import { tracker } from '../data/tracker'
 
-const APPLICATION = 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-grant-guide-application-template/951'
-
 function usd(value: number | null) {
   if (value === null) return 'Not set'
   return `$${value.toLocaleString('en-US')}`
@@ -32,7 +30,7 @@ const META = [
   { label: 'Design / admin', value: overview.programDesignAdmin },
   { label: 'Start', value: overview.startDate },
   { label: 'End', value: overview.endDate },
-  { label: 'Next milestone', value: timeline[0] ? `${timeline[0].label} · ${timeline[0].date}` : '—' },
+  { label: 'Next milestone', value: 'Submission Review - October 16th' },
   { label: 'Pool', value: overview.totalPool },
 ]
 
@@ -42,8 +40,7 @@ export function Overview() {
       <h1 className="text-3xl font-semibold tracking-tight text-bone-950">{overview.title}</h1>
       <p className="max-w-2xl text-base text-bone-600">{overview.subtitle} 🚀</p>
       <p className="max-w-2xl rounded-lg border-2 border-moss-800 bg-moss-100 px-3 py-1.5 text-sm leading-relaxed text-moss-900">
-        Between two rounds: Proactive and Retroactive, applicants will be able to receive funding for evidence-driven, high impact initiatives among 7 objectives. Apply{' '}
-        <a href={APPLICATION} className="font-medium text-brand-700 hover:underline" target="_blank" rel="noreferrer">here</a>!
+        Between two rounds: Proactive and Retroactive, applicants will be able to receive funding for evidence-driven, high impact initiatives among 7 objectives.
       </p>
 
       <section className="overflow-hidden rounded-2xl border border-bone-200 bg-white">
@@ -132,6 +129,15 @@ export function Overview() {
             </table>
           </div>
         )}
+      </section>
+
+      <section className="rounded-2xl border border-bone-200 bg-white">
+        <h2 className="border-b border-bone-200 px-5 py-4 text-xs font-semibold uppercase tracking-wider text-bone-500">Program changelog</h2>
+        <ul className="space-y-3 px-5 py-4 text-sm leading-relaxed text-bone-700">
+          <li>
+            <span className="font-medium text-bone-950">October 9th.</span> One-week timeline extension for Submission Review
+          </li>
+        </ul>
       </section>
     </div>
   )
