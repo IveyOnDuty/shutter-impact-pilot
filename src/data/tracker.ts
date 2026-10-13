@@ -5,8 +5,8 @@ export interface TrackerEntry {
   /** Application URL. Shown on the applicant name. Leave empty if none yet. */
   link: string
   amount: string
-  /** true shows a green tick, 'tbd' a clock (under review), false a dash. */
-  submissionCheck: boolean | 'tbd'
+  /** true shows a green tick, 'tbd' a clock (under review), 'no' a red X. false shows a dash. */
+  submissionCheck: boolean | 'tbd' | 'no'
   nextStep: string
 }
 
@@ -27,7 +27,7 @@ export const tracker: TrackerEntry[] = [
     objective: '6',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-round-1-proactive-grant-pen-roundops/958?u=seedgov',
     amount: '$3,000',
-    submissionCheck: 'tbd',
+    submissionCheck: 'no',
     nextStep: 'Submission Check',
   },
   {
@@ -55,7 +55,7 @@ export const tracker: TrackerEntry[] = [
     objective: '5',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-33hoxo-reusable-confidential-market-infrastructure/975?u=seedgov',
     amount: '$3,000',
-    submissionCheck: 'tbd',
+    submissionCheck: 'no',
     nextStep: 'Submission Check',
   },
   {
@@ -73,7 +73,7 @@ export const tracker: TrackerEntry[] = [
     objective: '2',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-shielded-voting-pilot-for-moloch-daos/979?u=seedgov',
     amount: '$1,800',
-    submissionCheck: 'tbd',
+    submissionCheck: true,
     nextStep: 'Submission Check',
   },
   {
@@ -91,7 +91,7 @@ export const tracker: TrackerEntry[] = [
     objective: '2',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-critter-crumbs-private-budget-allocation-with-shutter-governance/981?u=seedgov',
     amount: '$2,400',
-    submissionCheck: 'tbd',
+    submissionCheck: 'no',
     nextStep: 'Submission Check',
   },
   {
@@ -118,7 +118,7 @@ export const tracker: TrackerEntry[] = [
     objective: '3',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-fracton-ventures-concorde-for-cross-border-startup-teams-live-pilot-and-decision-ready-assessment/995?u=seedgov',
     amount: '$1,500',
-    submissionCheck: 'tbd',
+    submissionCheck: true,
     nextStep: 'Submission Check',
   },
   {
@@ -127,7 +127,7 @@ export const tracker: TrackerEntry[] = [
     objective: '7',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-round-1-proactive-grant-chinese-language-ai-x-privacy-builder-workshop/996?u=seedgov',
     amount: '$1,500',
-    submissionCheck: 'tbd',
+    submissionCheck: true,
     nextStep: 'Submission Check',
   },
   {
@@ -136,7 +136,7 @@ export const tracker: TrackerEntry[] = [
     objective: '7',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-mempool-receipts-a-verifiable-video-kit-for-the-encrypt-the-mempool-coalition/998?u=seedgov',
     amount: '$2,000',
-    submissionCheck: 'tbd',
+    submissionCheck: true,
     nextStep: 'Submission Check',
   },
   {
@@ -163,7 +163,7 @@ export const tracker: TrackerEntry[] = [
     objective: '7',
     link: 'https://shutternetwork.discourse.group/t/shutter-irl-africa-nigeria-privacy-ecosystem-activation-pilot/1004?u=seedgov',
     amount: '$2,750',
-    submissionCheck: 'tbd',
+    submissionCheck: 'no',
     nextStep: 'Submission Check',
   },
   {
@@ -171,8 +171,8 @@ export const tracker: TrackerEntry[] = [
     round: '1',
     objective: '1',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-encrypted-mempool-feasibility-assessment-for-an-on-chain-dex-router/1001?u=seedgov',
-    amount: '$2,400',
-    submissionCheck: 'tbd',
+    amount: '$2,040',
+    submissionCheck: true,
     nextStep: 'Submission Check',
   },
   {
@@ -181,7 +181,7 @@ export const tracker: TrackerEntry[] = [
     objective: '5',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-round-1-shutter-ke-education-adoption-initiative/1007?u=seedgov',
     amount: '$1,600',
-    submissionCheck: 'tbd',
+    submissionCheck: 'no',
     nextStep: 'Submission Check',
   },
   {
@@ -190,7 +190,7 @@ export const tracker: TrackerEntry[] = [
     objective: '5',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-sealed-proposal-kit-a-reusable-shutter-api-workflow-for-sealed-rfps/1008?u=seedgov',
     amount: '$2,500',
-    submissionCheck: 'tbd',
+    submissionCheck: true,
     nextStep: 'Submission Check',
   },
   {
@@ -199,7 +199,7 @@ export const tracker: TrackerEntry[] = [
     objective: '2',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-shielded-jury-assessments-for-deep-funding-qualifying-a-private-voting-deployment-where-juror-scores-resolve-live-prediction-markets/1010?u=seedgov',
     amount: '$2,400',
-    submissionCheck: 'tbd',
+    submissionCheck: true,
     nextStep: 'Submission Check',
   },
   {
@@ -208,7 +208,7 @@ export const tracker: TrackerEntry[] = [
     objective: '2',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-gavel-elections-shutter-powered-private-voting-for-nouns-dao-with-a-reusable-multi-dao-election-framework/1011?u=seedgov',
     amount: '$3,000',
-    submissionCheck: 'tbd',
+    submissionCheck: true,
     nextStep: 'Submission Check',
   },
 ]
