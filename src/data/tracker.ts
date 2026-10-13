@@ -74,7 +74,7 @@ export const tracker: TrackerEntry[] = [
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-shielded-voting-pilot-for-moloch-daos/979?u=seedgov',
     amount: '$1,800',
     submissionCheck: true,
-    nextStep: 'Submission Check',
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'BuildBuddies',
@@ -119,7 +119,7 @@ export const tracker: TrackerEntry[] = [
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-fracton-ventures-concorde-for-cross-border-startup-teams-live-pilot-and-decision-ready-assessment/995?u=seedgov',
     amount: '$1,500',
     submissionCheck: true,
-    nextStep: 'Submission Check',
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'C-Star',
@@ -128,7 +128,7 @@ export const tracker: TrackerEntry[] = [
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-round-1-proactive-grant-chinese-language-ai-x-privacy-builder-workshop/996?u=seedgov',
     amount: '$1,500',
     submissionCheck: true,
-    nextStep: 'Submission Check',
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'Ubong',
@@ -137,7 +137,7 @@ export const tracker: TrackerEntry[] = [
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-mempool-receipts-a-verifiable-video-kit-for-the-encrypt-the-mempool-coalition/998?u=seedgov',
     amount: '$2,000',
     submissionCheck: true,
-    nextStep: 'Submission Check',
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'Baronal',
@@ -173,7 +173,7 @@ export const tracker: TrackerEntry[] = [
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-encrypted-mempool-feasibility-assessment-for-an-on-chain-dex-router/1001?u=seedgov',
     amount: '$2,040',
     submissionCheck: true,
-    nextStep: 'Submission Check',
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'Chainweb',
@@ -191,7 +191,7 @@ export const tracker: TrackerEntry[] = [
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-sealed-proposal-kit-a-reusable-shutter-api-workflow-for-sealed-rfps/1008?u=seedgov',
     amount: '$2,500',
     submissionCheck: true,
-    nextStep: 'Submission Check',
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'Casuwyt',
@@ -200,7 +200,7 @@ export const tracker: TrackerEntry[] = [
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-shielded-jury-assessments-for-deep-funding-qualifying-a-private-voting-deployment-where-juror-scores-resolve-live-prediction-markets/1010?u=seedgov',
     amount: '$2,400',
     submissionCheck: true,
-    nextStep: 'Submission Check',
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'Gramajo',
@@ -209,6 +209,6 @@ export const tracker: TrackerEntry[] = [
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-gavel-elections-shutter-powered-private-voting-for-nouns-dao-with-a-reusable-multi-dao-election-framework/1011?u=seedgov',
     amount: '$3,000',
     submissionCheck: true,
-    nextStep: 'Submission Check',
+    nextStep: 'DAO Vote',
   },
 ]
