@@ -69,8 +69,8 @@ export const tracker: TrackerEntry[] = [
     objective: '5',
     link: 'https://shutternetwork.discourse.group/t/concorde-keyper-workflow-operator-ready-credential-isolated-deployment/978?u=seedgov',
     amount: '$1,100',
-    submissionCheck: 'tbd',
-    nextStep: 'Submission Check',
+    submissionCheck: true,
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'RaidGuild',
