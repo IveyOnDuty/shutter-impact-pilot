@@ -2,8 +2,10 @@ export interface TrackerEntry {
   applicant: string
   round: string
   objective: string
-  /** Application URL. Shown on the applicant name. Leave empty if none yet. */
+  /** Application URL. Shown on the applicant name, or on the summary page after the submission check passes. Leave empty if none yet. */
   link: string
+  /** Short summary for delegates. Used on the in-site page for a passed submission. */
+  summary?: string
   amount: string
   /** true shows a green tick, 'tbd' a clock (under review), 'no' a red X. false shows a dash. */
   submissionCheck: boolean | 'tbd' | 'no'
@@ -11,6 +13,9 @@ export interface TrackerEntry {
 }
 
 /** One object per application. Add a new block below; do not replace an existing row. */
+export function applicantSlug(name: string) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+}
 export const tracker: TrackerEntry[] = [
   {
     applicant: 'Alexsotodigital.eth',
@@ -44,9 +49,9 @@ export const tracker: TrackerEntry[] = [
     round: '1',
     objective: '2',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-shielded-voting-evidence-pack-ens-scope-proposal-arbitrum-brief-and-fee-structure-inputs/968?u=seedgov',
-    amount: '$2,000',
-    submissionCheck: 'tbd',
-    nextStep: 'Submission Check',
+    amount: '$1,700',
+    submissionCheck: true,
+    nextStep: 'DAO Vote',
   },
 
   {
@@ -63,7 +68,7 @@ export const tracker: TrackerEntry[] = [
     round: '1',
     objective: '5',
     link: 'https://shutternetwork.discourse.group/t/concorde-keyper-workflow-operator-ready-credential-isolated-deployment/978?u=seedgov',
-    amount: '$1,400',
+    amount: '$1,100',
     submissionCheck: 'tbd',
     nextStep: 'Submission Check',
   },
@@ -82,8 +87,8 @@ export const tracker: TrackerEntry[] = [
     objective: '7',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-build-buddies-shutter-education-ecosystem-activation/980?u=seedgov',
     amount: '$2,500',
-    submissionCheck: 'tbd',
-    nextStep: 'Submission Check',
+    submissionCheck: true,
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'CritterCrumbs',
@@ -120,6 +125,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$1,500',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'FractonVentures is a venture capital firm that invests in early-stage startups. They are a leading investor in the Concorde ecosystem and have a strong track record of success.',
   },
   {
     applicant: 'C-Star',
@@ -145,8 +151,8 @@ export const tracker: TrackerEntry[] = [
     objective: '4',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-round-1-proactive-grant-sealed-coupon-discovery-tokenized-structured-notes/999?u=seedgov',
     amount: '$1,500',
-    submissionCheck: 'tbd',
-    nextStep: 'Submission Check',
+    submissionCheck: true,
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'Wyszomirski',
@@ -154,8 +160,8 @@ export const tracker: TrackerEntry[] = [
     objective: '2',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-shielded-voting-in-practice-evidence-from-arbitrum-dao-and-a-pilot-proposal-for-its-elections/1002?u=seedgov',
     amount: '$2,400',
-    submissionCheck: 'tbd',
-    nextStep: 'Submission Check',
+    submissionCheck: true,
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'HannaKrypt',
