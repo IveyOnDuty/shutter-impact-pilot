@@ -22,7 +22,6 @@ const MONEY: { label: string; value: number; note?: string }[] = [
   { label: 'Round 1 pool', value: financials.round1Pool },
   { label: 'Round 2 pool', value: financials.round2Pool },
   { label: 'Earmarked', value: earmarked, note: 'Passed submission check' },
-  { label: 'Remainder', value: financials.totalPool - earmarked },
 ]
 
 const META = [
@@ -30,7 +29,7 @@ const META = [
   { label: 'Design / admin', value: overview.programDesignAdmin },
   { label: 'Start', value: overview.startDate },
   { label: 'End', value: overview.endDate },
-  { label: 'Next milestone', value: 'Submission Review - October 16th' },
+  { label: 'Next milestone', value: 'Pitch Day - October 28th' },
   { label: 'Pool', value: overview.totalPool },
 ]
 
@@ -99,6 +98,9 @@ export function Overview() {
       <section className="rounded-2xl border border-bone-200 bg-white">
         <h2 className="border-b border-bone-200 px-5 py-4 text-xs font-semibold uppercase tracking-wider text-bone-500">Program changelog</h2>
         <ul className="space-y-3 px-5 py-4 text-sm leading-relaxed text-bone-700">
+          <li>
+            <span className="font-medium text-bone-950">October 16th.</span> Two week timeline extension for Open Discussion & Pitch Day
+          </li>
           <li>
             <span className="font-medium text-bone-950">October 9th.</span> One-week timeline extension for Submission Review
           </li>
