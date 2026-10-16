@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import shutterShield from '../../assets/shutter-shield.png'
 
 const NAV = [
@@ -8,6 +8,9 @@ const NAV = [
 ]
 
 export function Layout() {
+  const navigate = useNavigate()
+  const location = useLocation()
+
   return (
     <div className="min-h-screen bg-bone-50">
       <header className="sticky top-0 z-20 bg-brand-600 shadow-lg">
@@ -22,6 +25,11 @@ export function Layout() {
                 key={to}
                 to={to}
                 end={end}
+                onClick={(event) => {
+                  if (to !== '/applicants' || location.pathname !== '/applicants') return
+                  event.preventDefault()
+                  navigate('/applicants', { replace: true, state: { allObjectives: Date.now() } })
+                }}
                 className={({ isActive }) =>
                   `rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
                     isActive

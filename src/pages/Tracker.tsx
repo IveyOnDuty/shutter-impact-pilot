@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { tracker, type TrackerEntry } from '../data/tracker'
 import { OBJECTIVES } from './Program'
 
@@ -46,6 +47,7 @@ function SummaryCard({ row }: { row: TrackerEntry }) {
 }
 
 export function Tracker() {
+  const location = useLocation()
   const [objective, setObjective] = useState<string | null>(null)
   const [objectiveOpen, setObjectiveOpen] = useState(false)
   const [selectedKey, setSelectedKey] = useState<string | null>(null)
@@ -55,6 +57,14 @@ export function Tracker() {
   const selectedRow = !objective && selectedKey
     ? trackerRows.find((row) => row.submissionCheck === true && rowKey(row) === selectedKey)
     : undefined
+
+  useEffect(() => {
+    const stamp = (location.state as { allObjectives?: number } | null)?.allObjectives
+    if (!stamp) return
+    setObjective(null)
+    setSelectedKey(null)
+    setObjectiveOpen(false)
+  }, [location.state])
 
   useEffect(() => {
     if (!objectiveOpen) return
