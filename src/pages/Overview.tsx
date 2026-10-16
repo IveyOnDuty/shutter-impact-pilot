@@ -1,7 +1,7 @@
+import { tracker } from '../data/tracker'
 import { financials } from '../data/financials'
 import { overview } from '../data/overview'
 import { timeline } from '../data/timeline'
-import { tracker } from '../data/tracker'
 
 function usd(value: number | null) {
   if (value === null) return 'Not set'
@@ -16,22 +16,6 @@ function parseAmount(amount: string) {
 const earmarked = tracker.reduce((sum, row) => (
   row.submissionCheck === true ? sum + parseAmount(row.amount) : sum
 ), 0)
-
-function checkRank(value: boolean | 'tbd' | 'no') {
-  if (value === true) return 0
-  if (value === 'tbd') return 1
-  if (value === 'no') return 2
-  return 3
-}
-
-function checkMark(value: boolean | 'tbd' | 'no') {
-  if (value === true) return '✅'
-  if (value === 'tbd') return '🕐'
-  if (value === 'no') return '❌'
-  return '—'
-}
-
-const trackerRows = [...tracker].sort((a, b) => checkRank(a.submissionCheck) - checkRank(b.submissionCheck))
 
 const MONEY: { label: string; value: number; note?: string }[] = [
   { label: 'Total pool', value: financials.totalPool },
@@ -110,41 +94,6 @@ export function Overview() {
             </li>
           ))}
         </ol>
-      </section>
-
-      <section className="rounded-2xl border border-bone-200 bg-white">
-        <h2 className="border-b border-bone-200 px-5 py-4 text-xs font-semibold uppercase tracking-wider text-bone-500">Tracker</h2>
-        {tracker.length === 0 ? (
-          <p className="px-5 py-10 text-center text-sm text-bone-400">No entries yet</p>
-        ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[720px] text-left text-sm">
-              <thead>
-                <tr className="border-b border-bone-100 text-[11px] font-semibold uppercase tracking-wider text-bone-400">
-                  {['Applicant', 'Round', 'Objective', 'Amount', 'Submission check', 'Next step'].map((col) => (
-                    <th key={col} className={`whitespace-nowrap px-5 py-3 font-semibold ${col === 'Round' || col === 'Objective' || col === 'Submission check' ? 'text-center' : ''}`}>{col}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {trackerRows.map((row) => (
-                  <tr key={`${row.applicant}-${row.round}-${row.objective}`} className="border-b border-bone-100 last:border-b-0 align-top">
-                    <td className="px-5 py-3.5 font-medium">
-                      {row.link ? (
-                        <a href={row.link} className="text-brand-700 hover:underline" target="_blank" rel="noreferrer">{row.applicant}</a>
-                      ) : <span className="text-bone-950">{row.applicant}</span>}
-                    </td>
-                    <td className="px-5 py-3.5 text-center text-bone-600">{row.round}</td>
-                    <td className="px-5 py-3.5 text-center text-bone-600">{row.objective}</td>
-                    <td className="px-5 py-3.5 tabular-nums text-bone-950">{row.amount}</td>
-                    <td className="px-5 py-3.5 text-center">{checkMark(row.submissionCheck)}</td>
-                    <td className="px-5 py-3.5 text-bone-600">{row.nextStep}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
       </section>
 
       <section className="rounded-2xl border border-bone-200 bg-white">

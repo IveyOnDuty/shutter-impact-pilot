@@ -25,6 +25,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$2,500',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Tests a PEN membership challenge: take a SEAT, say why you joined, and save a SEAT for someone else, so joining feels like a public commitment to the Ethereum Cypherpunk Manifesto.',
   },
   {
     applicant: 'franklincg',
@@ -43,6 +44,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$1,200',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Ships the PEN verification tooling and deployment runbook the README already promises. The Etherscan verification is already done, so it was taken out of this request and left for a Round 2 retroactive item.',
   },
   {
     applicant: 'Ashg',
@@ -52,6 +54,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$1,700',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Studies shielded Snapshot votes across DAOs since October 2022, including retention and churn, and prepares an ENS scope proposal and a fee-structure memo.',
   },
 
   {
@@ -71,6 +74,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$1,100',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Turns the existing Concorde Keyper prototype into an operator-ready release, with the model credential kept outside the agent, covering a clean-machine reproduction, recovery procedures, and the v1.0 handover.',
   },
   {
     applicant: 'RaidGuild',
@@ -80,6 +84,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$1,800',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Shows Moloch v3 DAOs can run shielded on-chain votes without a contract upgrade, by encrypting a signed vote and submitting it through Baal’s existing submitVoteWithSig. The pilot starts with RaidGuild.',
   },
   {
     applicant: 'BuildBuddies',
@@ -89,6 +94,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$2,500',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Runs local events, educational content, and hands-on sessions in Surabaya, Guayaquil, Buenos Aires, and Ho Chi Minh City, so builders and communities outside Shutter’s immediate ecosystem can understand and try its privacy tools.',
   },
   {
     applicant: 'CritterCrumbs',
@@ -114,8 +120,8 @@ export const tracker: TrackerEntry[] = [
     objective: '5',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-shutter-protected-dao-execution-demo-kit/987?u=seedgov',
     amount: '$1,800',
-    submissionCheck: 'tbd',
-    nextStep: 'Submission Check',
+    submissionCheck: true,
+    nextStep: 'DAO Vote',
   },
   {
     applicant: 'FractonVentures',
@@ -125,7 +131,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$1,500',
     submissionCheck: true,
     nextStep: 'DAO Vote',
-    summary: 'FractonVentures is a venture capital firm that invests in early-stage startups. They are a leading investor in the Concorde ecosystem and have a strong track record of success.',
+    summary: 'Runs a live Concorde pilot on Fracton Ventures’ existing shared-agent operations in Tokyo, and delivers a decision-ready assessment of what a group that already runs agents in production actually needs.',
   },
   {
     applicant: 'C-Star',
@@ -135,6 +141,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$1,500',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Tests a Chinese-language workshop in which AI and Web3 builders try a hands-on Shutter workflow, and reports what support would be useful next.',
   },
   {
     applicant: 'Ubong',
@@ -144,6 +151,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$2,000',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Makes a reusable video kit for the Encrypt the Mempool coalition: short clips of real sandwich-attack losses with the transaction hashes on screen, plus a template members can keep using.',
   },
   {
     applicant: 'Baronal',
@@ -153,6 +161,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$1,500',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Tests whether threshold encryption can reduce reactive late subscriptions in tokenized structured-note markets, using Note Systems’ coupon mechanism as the reference workflow.',
   },
   {
     applicant: 'Wyszomirski',
@@ -162,6 +171,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$2,400',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Measures how shielded voting has behaved in Arbitrum DAO elections and turns that evidence into a pilot proposal for those elections.',
   },
   {
     applicant: 'HannaKrypt',
@@ -180,6 +190,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$2,040',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Assesses whether the BlazePhoenix swap router can send user swaps through the encrypted mempool, and what is still missing for a pilot, with the transaction-flow already published.',
   },
   {
     applicant: 'Chainweb',
@@ -198,6 +209,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$2,500',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Packages the Shutter API into a reusable sealed-RFP workflow, so a buyer can register bidders, store ciphertext, close the round, and decrypt without building a one-off integration.',
   },
   {
     applicant: 'Casuwyt',
@@ -207,6 +219,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$2,400',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Qualifies a private-voting deployment for Deep Funding juror scores, which today sit in the clear while they resolve live prediction markets on Seer.',
   },
   {
     applicant: 'Gramajo',
@@ -216,5 +229,6 @@ export const tracker: TrackerEntry[] = [
     amount: '$3,000',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Builds Gavel Elections, a Shutter-powered private vote for Nouns DAO’s administrator election, designed so other DAOs can reuse the same framework.',
   },
 ]

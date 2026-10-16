@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-const OBJECTIVES: { title: string; points: string[]; dos?: string[]; links?: { label: string; href: string }[]; dont?: string; note?: string }[] = [
+export const OBJECTIVES: { title: string; points: string[]; dos?: string[]; links?: { label: string; href: string }[]; dont?: string; note?: string }[] = [
   {
     title: 'Objective 1: Qualify an Encrypted-Transaction Deployment Opportunity',
     points: [

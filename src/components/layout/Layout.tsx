@@ -3,6 +3,7 @@ import shutterShield from '../../assets/shutter-shield.png'
 
 const NAV = [
   { to: '/', label: 'Overview', end: true },
+  { to: '/applicants', label: 'Applicants', end: true },
   { to: '/program', label: 'Program', end: false },
 ]
 
@@ -10,10 +11,10 @@ export function Layout() {
   return (
     <div className="min-h-screen bg-bone-50">
       <header className="sticky top-0 z-20 bg-brand-600 shadow-lg">
-        <div className="mx-auto flex h-16 max-w-5xl items-center gap-4 px-4 md:px-6">
-          <NavLink to="/" className="flex items-center gap-2.5 shrink-0">
-            <img src={shutterShield} alt="" className="h-9 w-9 rounded-xl object-cover" />
-            <span className="text-sm font-semibold tracking-tight text-white">Impact Pilot Program tracker</span>
+        <div className="mx-auto flex h-20 max-w-5xl items-center gap-4 px-4 md:px-6">
+          <NavLink to="/" className="flex items-center gap-3 shrink-0">
+            <img src={shutterShield} alt="" className="h-14 w-14 rounded-xl object-cover" />
+            <span className="text-lg font-semibold tracking-tight text-white">Impact Pilot Program Tracker</span>
           </NavLink>
           <nav className="ml-auto flex items-center gap-1">
             {NAV.map(({ to, label, end }) => (
