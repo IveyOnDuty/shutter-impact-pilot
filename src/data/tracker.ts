@@ -122,6 +122,7 @@ export const tracker: TrackerEntry[] = [
     amount: '$1,800',
     submissionCheck: true,
     nextStep: 'DAO Vote',
+    summary: 'Packages a local reference flow for Shutter-protected DAO execution, so a treasury transfer or vendor payout stays private until reveal and is verified against its public commitment before it runs.',
   },
   {
     applicant: 'FractonVentures',
