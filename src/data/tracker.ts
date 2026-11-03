@@ -111,7 +111,7 @@ export const tracker: TrackerEntry[] = [
     objective: '6',
     link: 'https://shutternetwork.discourse.group/t/shutter-dao-0x36-impact-pilot-program-round-1-proactive-grant-pen-octant-integration-proof-yield-routing-refund-solvency-governance-readiness/982?u=seedgov',
     amount: '$1,800',
-    submissionCheck: 'tbd',
+    submissionCheck: 'no',
     nextStep: 'Submission Check',
   },
   {
