@@ -1,4 +1,3 @@
-import { tracker } from '../data/tracker'
 import { financials } from '../data/financials'
 import { overview } from '../data/overview'
 import { timeline } from '../data/timeline'
@@ -8,14 +7,7 @@ function usd(value: number | null) {
   return `$${value.toLocaleString('en-US')}`
 }
 
-function parseAmount(amount: string) {
-  const value = Number(amount.replace(/[^0-9.]/g, ''))
-  return Number.isFinite(value) ? value : 0
-}
-
-const earmarked = tracker.reduce((sum, row) => (
-  row.submissionCheck === true ? sum + parseAmount(row.amount) : sum
-), 0)
+const earmarked = 0
 
 const MONEY: { label: string; value: number; note?: string }[] = [
   { label: 'Total pool', value: financials.totalPool },
@@ -29,7 +21,7 @@ const META = [
   { label: 'Design / admin', value: overview.programDesignAdmin },
   { label: 'Start', value: overview.startDate },
   { label: 'End', value: overview.endDate },
-  { label: 'Next milestone', value: 'Pitch Day - October 28th' },
+  { label: 'Next milestone', value: 'Round 2 Applications' },
   { label: 'Pool', value: overview.totalPool },
 ]
 
@@ -98,6 +90,9 @@ export function Overview() {
       <section className="rounded-2xl border border-bone-200 bg-white">
         <h2 className="border-b border-bone-200 px-5 py-4 text-xs font-semibold uppercase tracking-wider text-bone-500">Program changelog</h2>
         <ul className="space-y-3 px-5 py-4 text-sm leading-relaxed text-bone-700">
+          <li>
+            <span className="font-medium text-bone-950">November 7th.</span> Round 1 voting concluded with no applicants reaching enough support.
+          </li>
           <li>
             <span className="font-medium text-bone-950">October 16th.</span> Two week timeline extension for Open Discussion & Pitch Day
           </li>
